@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Introducción a Laravel — CodeNight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --accent: #3fb950;
+      --muted: #8b949e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Figtree', sans-serif;
+      line-height: 1.8;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background: #0d1117cc;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #21262d;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+    nav a {
+      margin-left: 2rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      max-width: 750px;
+      margin: auto;
+      padding: 3rem 2rem;
+    }
+    h1 {
+      font-family: 'Fira Code', monospace;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    time {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    h2 {
+      margin-top: 2.5rem;
+      font-size: 1.5rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+    }
+    p {
+      margin: 1.2rem 0;
+      color: #c9d1d9;
+    }
+    pre {
+      background: #1f2933;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+      color: #d1dbe8;
+    }
+    code {
+      background: #21262d;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    nav.end {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+    }
+    nav.end a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav.end a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CodeNight</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Blog</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <article>
+    <h1>Introducción a Laravel</h1>
+    <time datetime="2025-04-24">Publicado el 24 de abril de 2025</time>
+
+    <p>Laravel es un framework de PHP moderno y elegante que te permite desarrollar aplicaciones web robustas, rápidas y seguras. Es conocido por su sintaxis expresiva, migraciones de base de datos, y facilidad para trabajar con rutas y controladores.</p>
+
+    <h2>Instalación rápida</h2>
+    <p>Para instalar Laravel de forma local, necesitas tener Composer instalado. Luego puedes ejecutar el siguiente comando:</p>
+
+    <pre><code>composer create-project laravel/laravel blog</code></pre>
+
+    <h2>¿Por qué usar Laravel?</h2>
+    <ul>
+      <li>Routing intuitivo</li>
+      <li>ORM Eloquent muy potente</li>
+      <li>Blade: sistema de plantillas limpio</li>
+      <li>Integración con colas, correo y autenticación</li>
+    </ul>
+
+    <h2>Primeros pasos</h2>
+    <p>Una vez instalado, puedes iniciar el servidor con:</p>
+
+    <pre><code>php artisan serve</code></pre>
+
+    <p>¡Y ya estás listo para construir tu primera app en Laravel!</p>
+
+    <nav class="end">
+      <div>← <a href="#">Anterior: ¿Qué es PHP?</a></div>
+      <div><a href="#">Siguiente: Estructura de carpetas en Laravel →</a></div>
+    </nav>
+  </article>
+
+</body>
+</html>

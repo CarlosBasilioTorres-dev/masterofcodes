@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducción a Java</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/blog.css" />
+  <link rel="stylesheet" href="/css/entrada.css" />
+</head>
+<body>
+    <header>
+        <h1>
+            Master Of Codes
+        </h1>
+        <nav>
+            <a href="/index.html">Inicio</a>
+            <a href="/index.html#features">Cursos</a>            
+        </nav>
+    </header>
+
+    <article>
+        <h1>El lenguaje Java</h1>
+        <time datetime="2025-04-26">Publicado el 26 de abril de 2025</time>
+
+        <h2>¿Tipos de lenguajes?</h2>
+        <p>
+            Si llegaste a este punto, es decir, al punto de necesitar aprender Java, es evidente que te has encontrado con 2 terminos:
+        </p>
+        <ol>
+            <li>Lenguajes compilados</li>
+            <li>Lenguajes interpretados</li>
+        </ol>
+        <p>
+            Que los entiendas ya es otra cosa, pero seguramente los has escuchado en algún lugar. Vamos a intentar entender este asunto de una vez por todas en un lenguaje facil, sencillo y para toda la familia.
+        </p>
+
+        <h2>El camino del código</h2>
+        <p>
+            Lo primero que tenemos que entender es lo siguiente. Todo lenguaje de programación sigue un mismo camino:
+        </p>
+        <ul>
+            <li>Se escribe el código fuente (.c, .java, .py, .js, etc)</li>
+            <li>Por algún medio, este código se traduce a lenguaje maquina (001100110)</li>
+            <li>La computadora entonces, lo lee y ejecuta lo que nosotros hayamos programado en ese código fuente.</li>
+        </ul>
+        <p>
+            ¿Simple? Pues esta es la lógica que actualmente mueve mercados, industrias... y básicamente el mundo entero pero, detras de esto, el como llegar al código máquina es la parte mas interesante el asunto.
+        </p>
+
+        <h2>Lenguaje compilado</h2>
+        <p>
+            Imagina una empresa, en esta empresa se fabrican carros de principio a fin. Tu entregas las piezas, y dentro de esta fabrica, las maquinas que trabajan en su interior arman de manera precisa cada parte para que tu puedas obtener un auto (que tu sabes manejar) que espera tus instrucciones para comenzar a funcionar.
+        </p>
+        <p>
+            En esencia, esto es lo que sucede en un lenguaje de programación compilado. ¿Lo desglozamos un poco más?, ok vamos a ello:
+        </p>
+        <p>
+            En este caso, existe un programa (compilador) que analiza tu código fuente, lo optimiza y hace una traducción del mismo a lenguaje máquina (que básicamente es un lenguaje que entiende la computadora de forma natural, es decir, 0's y 1's). Cuando termina la traducción entrega un archivo "ejecutable" listo para poder ser utilizado por un usuario común que sabe cómo trabajar con el.
+        </p>
+        <p>
+            A este proceso (código fuente, traducción, ejecutable) se le conoce como <b>compilación</b>, de ahí el nombre de este tipo de lenguajes.
+        </p>
+        <h2>Lenguaje interpretado</h2>
+        <p>
+            Volvamos ahora a nuestra fábrica, la cual cayó en bancarrota y tuvo que cambiar su giro mercantil. ¡Ahora vendemos muebles de madera! (sígueme en el viaje, ¿va?).
+        </p>
+        <p>
+            Tú eres diestro en el armado de muebles (conoces el procedimiento para fabricar cualquier cosa de este material), así que cuando la maquiladora te manda las instrucciones para armar el mueble, lo único que haces es leer un paso del manual y ejecutar lo indicado, esto de forma iterativa (en un ciclo repetitivo), hasta que el mueble esté completamente terminado.
+        </p>
+        <p>
+            Un lenguaje interpretado hace justamente esto: toma tu código fuente, lo lee línea a línea y, conforme va leyendo, va ejecutando las instrucciones hasta llegar al término del mismo. Esta peculiaridad hace virtualmente imposible que el lenguaje nos entregue un producto final (un archivo ejecutable).
+        </p>
+        <p>
+            ¿Ves cómo las ideas se van entrelazando por sí solas? Ahora vamos a lo más interesante de este asunto. Ahora que entendemos cómo funciona cada tipo de lenguaje por separado, vamos a mezclar las ideas y crear la mejor fábrica de autos y muebles de madera del mundo. Esta fábrica, en nuestro particular caso, ha sido nombrada <b>Java</b>.
+        </p>
+        <h2>Java: Muebles y Carros S.A de C.V</h2>
+        <h2 class="danger">
+            Advertencia: No continúes a lo siguiente hasta que entiendas todo lo anterior.
+        </h2>
+        <p>
+            Ahora, en este punto, nuestra empresa retomó el giro de los carros y le dio a las instrucciones de los muebles un uso interesante. Ahora, nuestros carros vienen con un manual de instrucciones que debes seguir de manera repetitiva para que el auto funcione correctamente.
+        </p>
+        <p>
+            Si no lo entiendes del todo, relájate, yo tampoco lo entendí a la primera. Primero, veamos el armado del coche, es decir, la compilación del código.
+        </p>
+        <p>
+            Cuando Java recibe tu código fuente, lo revisa, lo optimiza y lo traduce a una especie de código máquina. Aunque, en realidad, no estamos hablando del código máquina que entiende directamente la computadora. Este código es el manual de instrucciones de nuestro carro, y recibe el nombre de bytecode.
+        </p>
+        <p>
+            La segunda parte consiste en interpretar el bytecode. Es decir, una parte adicional de esta fábrica se encarga de leer ese código línea por línea y ejecutarlo poco a poco.
+        </p>
+        <p>
+            En resumen, Java primero compila tu código y lo transforma en bytecode, el cual, eventualmente, será interpretado y ejecutado para obtener el resultado esperado por el programador.
+        </p>
+
+        <h2>Ahora vamos a lo técnico</h2>
+        <h2 class="danger">
+            Una vez que entiendas todo lo anterior, continúa con esto.
+        </h2>
+        <p>
+            De forma teórica, ya entendemos cómo funciona Java. Ahora, en la práctica, hay algunas cosas más que debemos conocer.
+        </p>
+        <p>
+            Java funciona dentro de un entorno de desarrollo proporcionado por Oracle, conocido como el JDK (Java Development Kit). Este paquete contiene todo lo que necesitas para crear, compilar y ejecutar aplicaciones Java desde cero, y está compuesto por diversos subelementos:
+        </p>
+        <ul>
+            <li><code>JDK</code>: Para compilar y ejecutar aplicaciones</li>
+            <li><code>JRE</code>: Para ejecutar aplicaciones</li>
+        </ul>
+        <p>
+            Esta es la razón por la cual, en la clase pasada, te solicité que instalaras el JDK en tu equipo. Para un usuario común y corriente, basta con tener instalado el JRE, que le permite ejecutar aplicaciones Java en su computadora (como Minecraft en algunas versiones). Esta también es la razón por la que Java quiere mantenerse actualizado en equipos Windows (el famoso "Hay una nueva versión de Java disponible").
+        </p>
+        <h2>
+            En Windows si funcionaba
+        </h2>
+        <p>
+            Cuando tu compilas tu código de cualquier lenguaje compilado en Windows, y lo quieres correr en Linux por ejemplo, no lo vas a lograr. Esto se debe a que el formato entregado (<code>.exe</code>) no es compatible nativamente con este SO.
+        </p>
+        <p>
+            Lo ideal en este tipo de casos es compilar nuevamente el código para que se te entregue un ejecutable para la distribucion en cuestion. Esto complica mucho el uso de lenguajes compilados, ya que propiamente, necesitarias correr el programa en el equipo que quieras utilizarlo para tener su version ejecutable a la medida.
+        </p>
+        <h2>La solución en Java</h2>
+        <p>
+            A diferencia de otros lenguajes compilados, Java cuenta con un sistema llamado JVM (Java Virtual Machine), que permite ejecutar el bytecode de Java dentro de sí mismo, sin depender del sistema operativo subyacente. Esto significa que puedes escribir y compilar tu código una sola vez, y ejecutarlo en cualquier sistema operativo con la JVM instalada, sin tener que recompilarlo.
+        </p>
+        <h2>Un respiro antes de continuar</h2>
+        <p>Hasta aquí dejamos este capítulo del curso. Espero que esté siendo de tu agrado y, más allá de eso, que la idea general de lo que sucede dentro de esta obra maestra llamada Java te haya quedado clara y comprensible.</p>
+        <p>Nos vemos en la siguiente clase, hay que comenzar a programar.</p>
+        <nav class="end">
+            <div><a href="clase 1.html">← Bienvenido al Curso</a></div>
+            <div><a href="clase 3.html">Hola mundo en Java →</a></div>
+        </nav>
+    </article>
+</body>
+</html>
