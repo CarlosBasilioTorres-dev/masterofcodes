@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variables en Java</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/blog.css" />
+  <link rel="stylesheet" href="../../css/entrada.css" />
+</head>
+<body>
+    <header>
+        <h1>
+            Master Of Codes
+        </h1>
+        <nav>
+            <a href="../../index.html">Inicio</a>
+            <a href="../../index.html#features">Cursos</a>            
+        </nav>
+    </header>
+
+    <article>
+        <h1>Variables en Java</h1>
+        <time datetime="2025-04-26">Publicado el 9 de mayo de 2025</time>
+        <p>
+            Bienvenido de nuevo.
+        </p>
+        <p>
+            Hasta este punto del curso, únicamente hemos creado un programa muy simple: el "Hola, mundo". Espero que la explicación proporcionada haya sido de utilidad.
+        </p>
+        <p>
+            Pasemos ahora a temas más interesantes.
+        </p>
+
+        <p>
+            Si bien escribir mensajes en una aplicación es de mucha utilidad, un programa que solo muestra mensajes resulta inservible en muchos casos. Lo importante, en el 99.99 % de los casos, es manejar información.
+        </p>
+        <h2>
+            ¿Cómo almacenar información en Java?
+        </h2>
+        <p>
+            <b>Java</b> nos proporciona 3 formas básicas de almacenar información dentro de un código fuente:
+        </p>
+        <ol>
+            <li>Variables</li>
+            <li>Constantes</li>
+            <li>Variables con inferencia de tipo</li>
+        </ol>
+        <h2>
+            Variables
+        </h2>
+
+        <p>
+            Comencemos a programar un poco, crea un nuevo archivo <i>"Variables.java"</i> y escribe lo siguiente:
+        </p>
+        <pre><code>public class Variables {
+    public static void main(String[] args) {
+        int edad = 33;
+        System.out.println("Mi edad es: " + edad);
+    }
+}</code></pre>
+
+        <p>Si todo esta bien, obtendrás el siguiente resultado:</p>
+        <pre><code>Mi edad es: 33</code></pre>
+        <h2 class="danger">Aquí hay muchas cosas que explicar, y te recomiendo que revises el <a href="">Manual de operaciones básicas de Java</a> y el <a href="">Manual de tipos de dato</a> para entender algunos conceptos que aquí solo voy a mencionar.</h2>
+        <p>
+            La definición más clara que puedo dar de una variable es la siguiente:
+        </p>
+        <div class="cita">
+            "Una literal que almacena una dirección de memoria en la cual asignaremos un valor que puede cambiar a lo largo del tiempo."
+        </div>
+        <p>
+            ¿Entendiste? No te preocupes, yo tampoco. Vamos más despacio.
+        </p>
+
+        <p>
+            Imagina tu clase de matemáticas de la prepa, en la cual te decían lo siguiente:
+        </p>
+        <pre><code>x + 5 = 10  => x = 5</code></pre>
+        <div class="cita">
+            Si x + 5 es igual con 10, esto implica que x es igual a 5
+        </div>
+        <p>
+            Si te das cuenta, x es una literal (una letra) a la cual le asignamos un valor (en este caso, 5). En programación es lo mismo: una literal a la cual le asignamos un valor. Pero, en este caso, el valor que le asignamos es una dirección de memoria (un lugar en la memoria RAM) en el cual se almacena la información que le indiquemos (en el caso del programa, 33).
+        </p>
+        <p>
+            Este tipo de almacenamiento recibe el nombre de <b>Variable</b> por que, como su nombre lo indica, es un valor cambiante en el tiempo (en una parte del código vale una cosa y en otro otra). Vamos a dejarlo más claro con un ejemplo:
+        </p>
+        <p>Aumentemos a nuestro código algunas lineas:</p>
+        <pre><code>public class Variables {
+    public static void main(String[] args) {
+        int edad = 33;
+        System.out.println("Mi edad es: " + edad);
+            
+            
+        edad = 38;
+        System.out.println("Mi edad es: " + edad);
+    }
+}
+        </code></pre>
+        <p>Tu salida debe ser la siguiente:</p>
+        <pre>
+Mi edad es: 33
+Mi edad es: 38</pre>
+
+
+        <p>
+            Si lo revisas con detenimiento veras que edad en la primer concatenación valia 33. Para la segunda, cambiamos su valor a 38, es decir, en un momento en el tiempo valia 33, pero ahora vale 38.
+        </p>
+
+        <h2>Constantes</h2>
+        <p>
+            Misma idea inicial que en variables, solamente que, como su nombre lo indica, el valor no puede cambiar en el tiempo, es decir, debe ser constante durante toda la ejecución.
+        </p>
+        <p>
+            Retomando el ejemplo anterior, haremos una modificación:
+        </p>
+        <pre><code>public class Variables {
+    public static void main(String[] args) {
+        final int edad = 33;
+        System.out.println("Mi edad es: " + edad);
+        
+        
+        edad = 38;
+        System.out.println("Mi edad es: " + edad);
+    }
+}</code></pre>
+<p>
+    Este código debe mostrar el siguiente error: 
+</p>
+<pre><code>java: cannot assign a value to final variable edad</code></pre>
+<p>
+    El error es muy explicito 
+</p>
+<div class="cita">
+    No puedes asignar un valor a la variable final edad
+</div>
+<p>
+    Como su misma declaración lo explica, edad tiene un valor entero final (no puede cambiar).
+    Al redefinir su valor a 38, entonces es cuando esto intenta violar el principio básico de la contante y es cuando marca el error.
+</p>
+<h2>Variables con inferencia de tipo:</h2>
+<h2 class="danger">Se recomienda leer el <a href="">Manual de tipos de dato</a> antes de esta sección.</h2>
+<p>
+    A partir de Java 10, se incluye una nueva forma de declarar variables en java, el cual tiene un uso muy particular: Variables por inferencia de tipo.
+</p>
+<p>
+    Sin darle muchas vueltas al asunto, esto implica que,dado un dato, <b>Java</b> es capaz de identificar el tipo de dato y por consiguiente, trabajarlo como lo que él detecte.
+</p>
+<p>
+    Vamos a un ejemplo:
+</p>
+<pre><code>public class Variables {
+    public static void main(String[] args) {
+        var edad = 33;
+        System.out.println("Mi edad es: " + edad);
+
+
+        edad = 38;
+        System.out.println("Mi edad es: " + edad);
+    }
+}
+</code></pre>
+<p>
+    Lo anterior devuelve la misma respuesta que el programa anterior (sin errores), pero funciona con <code>var</code> (definición que indica que trabajamos con una variable de inferencia).
+</p>
+<h2>Todo adelanto tiene un precio</h2>
+<p>
+    Este tipo de variables no infieren su tipo de dato en el proceso de interpretación (es decir en ejecución), lo hace en el tiempo de compilación. Lo anterior implica que al momento de declarar la variable debemos de inicializarla para que pueda funcionar.
+</p>
+<p>
+    En el siguiente capitulo, haremos ejercicios, les daremos solución y comenzaremos a explorar la lógica detras de programas mas complejos.
+</p>
+        <nav class="end">
+            <div><a href="clase 3.html">← Hola Mundo en Java</a></div>
+            <div><a href="clase 5.html">Ejercicios de repaso 1 →</a></div>
+        </nav>    
+    </article>
+</body>
+</html>
