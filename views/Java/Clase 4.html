@@ -46,6 +46,59 @@
             <li>Constantes</li>
             <li>Variables con inferencia de tipo</li>
         </ol>
+        <p>
+            Independientemente de la forma que elijas, la estructura básica es la misma:
+        </p>
+
+        <pre><code>tipo_de_dato nombre valor; </code></pre>
+
+        <h2 class="danger">Aquí hay muchas cosas que explicar; te recomiendo que revises el <a href="">Manual de operaciones básicas de Java</a> y el <a href="">Manual de tipos de dato</a> para entender algunos conceptos que aquí solo voy a mencionar.</h2>
+
+        <h2 class="danger">
+            Tipo de dato
+        </h2>
+        <p>
+            Se refiere al tipo de información que vas a guardar (enteros, flotantes, double,boolean, etc).
+        </p>
+        <h2 class="danger">
+            Nombre
+        </h2>
+        <p>
+            Es el nombre con el cual tu vas a identificar tu información.
+        </p>
+        <p>
+            El nombre que elijas para tu variable debe cumplir algunas reglas.
+        </p>
+        <ol>
+            <li>Debe comenzar con una letra o guion bajo (_)</li>
+            <li>Despues de la primer letra, puedes colocar numeros, letras o guiones bajos</li>
+            <li><a href=""><b>(Regla camel case)</b></a> La primer letra debe ser minúscula</li>
+            <li>No debe contener espacios, ni caracteres especiales, salvo _</li>
+        </ol>
+        <h2>Ejemplos validos</h2>
+        <ol>
+            <li>var_1</li>
+            <li>_var_1</li>
+            <li>segunda_variable</li>
+        </ol>
+        <h2 class="danger">Ejemplos invalidos</h2>
+
+        <ol>
+            <li>1_var</li>
+            <li>variable-1</li>
+            <li>2da_variable</li>
+        </ol>
+
+        <h2 class="danger">
+            Valor
+        </h2>
+
+        <p>
+            Opcionalmente, puedes inicializar tu literal con algún valor (excepto en constantes, ahí es obligatorio).
+        </p>
+        
+        <p>Si te das cuenta las reglas son muy simples, solamente hay que tener cuidado al momento de utilizarlas. Una vez entendido esto, continuamos con la explicación.</p>
+
         <h2>
             Variables
         </h2>
@@ -60,10 +113,9 @@
     }
 }</code></pre>
 
-        <p>Si todo esta bien, obtendrás el siguiente resultado:</p>
+        <p>Si todo est bien, obtendrás el siguiente resultado:</p>
         <pre><code>Mi edad es: 33</code></pre>
-        <h2 class="danger">Aquí hay muchas cosas que explicar, y te recomiendo que revises el <a href="">Manual de operaciones básicas de Java</a> y el <a href="">Manual de tipos de dato</a> para entender algunos conceptos que aquí solo voy a mencionar.</h2>
-        <p>
+        
             La definición más clara que puedo dar de una variable es la siguiente:
         </p>
         <div class="cita">
@@ -105,12 +157,12 @@ Mi edad es: 38</pre>
 
 
         <p>
-            Si lo revisas con detenimiento veras que edad en la primer concatenación valia 33. Para la segunda, cambiamos su valor a 38, es decir, en un momento en el tiempo valia 33, pero ahora vale 38.
+            Si lo revisas con detenimiento verás que edad en la primera concatenación valía 33. Para la segunda, cambiamos su valor a 38, es decir, en un momento en el tiempo valía 33, pero ahora vale 38.
         </p>
 
         <h2>Constantes</h2>
         <p>
-            Misma idea inicial que en variables, solamente que, como su nombre lo indica, el valor no puede cambiar en el tiempo, es decir, debe ser constante durante toda la ejecución.
+            Misma idea inicial que en variables, solamente que, como su nombre lo indica, el valor no puede cambiar con el tiempo, es decir, debe ser constante durante toda la ejecución.
         </p>
         <p>
             Retomando el ejemplo anterior, haremos una modificación:
@@ -130,7 +182,7 @@ Mi edad es: 38</pre>
 </p>
 <pre><code>java: cannot assign a value to final variable edad</code></pre>
 <p>
-    El error es muy explicito 
+    El error es muy explícito 
 </p>
 <div class="cita">
     No puedes asignar un valor a la variable final edad
@@ -145,7 +197,7 @@ Mi edad es: 38</pre>
     A partir de Java 10, se incluye una nueva forma de declarar variables en java, el cual tiene un uso muy particular: Variables por inferencia de tipo.
 </p>
 <p>
-    Sin darle muchas vueltas al asunto, esto implica que,dado un dato, <b>Java</b> es capaz de identificar el tipo de dato y por consiguiente, trabajarlo como lo que él detecte.
+    Sin darle muchas vueltas al asunto, esto implica que, dado un dato, <b>Java</b> es capaz de identificar el tipo de dato y por consiguiente, trabajarlo como lo que él detecte.
 </p>
 <p>
     Vamos a un ejemplo:
@@ -166,7 +218,7 @@ Mi edad es: 38</pre>
 </p>
 <h2>Todo adelanto tiene un precio</h2>
 <p>
-    Este tipo de variables no infieren su tipo de dato en el proceso de interpretación (es decir en ejecución), lo hace en el tiempo de compilación. Lo anterior implica que al momento de declarar la variable debemos de inicializarla para que pueda funcionar.
+    Este tipo de variables no infieren su tipo de dato en el proceso de interpretación (es decir en ejecución), lo hace en el tiempo de compilación. Lo anterior implica que, al momento de declarar la variable, debemos de inicializarla para que pueda funcionar.
 </p>
 <p>
     En el siguiente capitulo, haremos ejercicios, les daremos solución y comenzaremos a explorar la lógica detras de programas mas complejos.
