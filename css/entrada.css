@@ -89,3 +89,7 @@ article {
     max-width: 150px;
     padding: 0 10px;
   }
+
+pre{
+  scrollbar-width: none;
+}

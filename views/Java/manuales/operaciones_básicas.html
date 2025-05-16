@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operaciones básicas en Java</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../../css/blog.css" />
+  <link rel="stylesheet" href="../../../css/entrada.css" />
+</head>
+<body>
+  <header>
+    <h1>
+        Master Of Codes
+    </h1>
+    <nav>
+        <a href="../../../index.html">Inicio</a>
+        <a href="../../../index.html#features">Cursos</a>            
+    </nav>
+</header>
+  <article>
+    <h1>Operaciones básicas en Java</h1>
+    <p>
+      En Java, existen 4 operaciones básicas que no requieren nada adicional a lo creado en el <a href="../clase 3.html">Hola mundo</a>, estas operaciones son:
+    </p>
+
+    <ol>
+      <li>Suma</li>
+      <li>Resta</li>
+      <li>Multiplicación</li>
+      <li>División</li>
+    </ol>
+    
+    <h2>
+      Suma
+    </h2>
+
+    <p>
+      Aunque parezca lógico, en este curso no damos nada por hecho. Hagamos un programa simple para entender la suma de 2 números en java.
+    </p>
+
+    <pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+        System.out.println(a + " + " + b + " = " + c);
+    }
+}
+</code></pre>
+
+<p>
+  El resultado del programa es el siguiente:
+</p>
+
+<pre><code>10 + 20 = 30</code></pre>
+<p>
+  Las tres primeras lineas son simples de entender si leíste el manual de <a href="tipos_de_dato.html">Tipos de dato en Java</a>:
+</p>
+
+<ol>
+  <li>Declaramos una variable entera de nombre  "a" con valor de 10</li>
+  <li>Declaramos una variable entera de nombre "b" con el valor de 20</li>
+  <li>Declaramos una variable entera de nombre "c" cuyo valor será la suma de a y b</li>
+</ol>
+<p>
+  El método println es otra cosa.
+</p>
+<h2>
+  Concatenación
+</h2>
+<p>
+  El operador suma (+) dentro de Java, nos indica una operación adicional a la adición, y es denominada <b>concatenación</b>. Esta operación consiste en unir 2 valores (texto, números o variables) como parte de un solo texto.
+</p>
+<p>
+  Pensemos un minuto en el println usado en el código anterior:
+</p>
+<pre><code>System.out.println(a + " + " + b + " = " + c);</code></pre>
+<p>
+  Lo que estamos diciendo en esa linea en un lenguaje completamente informal es lo siguiente:
+</p>
+<ol>
+  <li><code>System.out.println</code>: Voy a imprimir algo y al final de la impresión haces un salto de linea. (ln = enter en un procesador de texto).</li>
+  <li><code>a</code>: Muestra el valor de la variable a</li>
+  <li><code>+ " + "</code>: en seguida vas a mostrar el texto + </li>
+  <li><code>+ b</code>: después del + muestra el valor de b</li>
+  <li><code>+ " = "</code>: posteriormente vas a mostrar el símbolo de =</li>
+  <li><code> + c</code> y por último vas a mostrar el valor de c</li>
+</ol>
+<p>
+  En resumen, la concatenación nos permite unir texto y valores de variables, lo cual se hace muy util al momento de mostrar resultados a los usuarios.
+</p>
+<h2>
+  Resta
+</h2>
+ <pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = a - b;
+        System.out.println(a + " - " + b + " = " + c);
+    }
+}
+</code></pre>
+<p>Resultado:</p>
+<pre><code>10 - 20 = -10</code></pre>
+<h2>Multiplicación</h2>
+<pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = a * b;
+        System.out.println(a + " - " + b + " = " + c);
+    }
+}
+</code></pre>
+<p>Resultado:</p>
+<pre><code>10 * 20 = 200</code></pre>
+<h2>División</h2>
+<pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        int c = a / b;
+        System.out.println(a + " / " + b + " = " + c);
+    }
+}
+</code></pre>
+<p>Resultado:</p>
+<pre><code>10 / 20 = 0</code></pre>
+<h2 class="danger">¿Que paso aquí? El problema es el tipo de dato</h2>
+<p>
+  Relájate, todo lo hicimos bien (mas o menos). El resultado obtenido en lógica computacional es correcto. Aquí de explico el por que:
+</p>
+
+<p>
+  Si revisas el código con detenimiento, veras que todas las variables son enteras, es decir, solamente pueden guardar números enteros. Ahi esta la clave del problema.
+</p>
+
+<p>
+  Debido a que C almacena una división no entera (en este caso .5), Java redondea el resultado al entero mas cercano hacia abajo por defecto, es decir, si el resultado es .5, Java almacenará 0 (si fuera 1.5 almacenaría 1, etc).
+</p>
+<h2 class="danger">La solución</h2>
+<p>Veamos que pasa si almacenamos ahora el resultado en una variable float:</p>
+<pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        float c = a / b;
+        System.out.println(a + " / " + b + " = " + c);
+    }
+}
+</code></pre>
+<p>
+  Si hacemos esto, mi editor muestra un warning (no es un error, el programa va a funcionar pero quizá no como lo esperamos) que dice lo siguiente:
+</p>
+<p class="cita">
+  'a/b' : integer division in floating-point context
+</p>
+<p>Y el resultado vuelve a ser erróneo</p>
+<pre><code>10 / 20 = 0.0</code></pre>
+<p>Traducirlo al español no sirve de nada si no entendemos el contexto del que nos habla, vamos a explicarlo detenidamente:</p>
+<p>Lo que nos indica esta advertencia es que, dado que estamos operando números enteros, Java determina que la respuesta debe ser entera, por lo cual hace lo mismo que en el caso anterior, redondea hacia abajo y nos muestra como resultado 0.</p>
+<p>En resumen, Java nos esta diciendo:</p>
+<div class="cita">
+  Si tengo 2 números enteros, por mis (introduzca su insulto favorito) <br> el resultado va a ser entero.
+</div>
+<h2>¿Ahora si hay solución?</h2>
+<p>Si, de hecho tenemos 2 formas de solucionarlo:</p>
+<h2 class="danger">
+  Opción 1: Cambia una variable a flotante
+</h2>
+<pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        float b = 20;
+        float c = a / b;
+        System.out.println(a + " / " + b + " = " + c);
+    }
+}
+</code></pre>
+<h2 class="danger">Opción 2: Haz un cast al resultado:</h2>
+<pre><code>public class ManualOperacionesBasicas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        float c =(float) a / b;
+        System.out.println(a + " / " + b + " = " + c);
+    }
+}
+</code></pre>
+<p>
+  Hacer un "cast" implica que estableceremos un contexto en el cual vamos a trabajar. En este caso en particular, le indicamos que, aunque sean 2 enteros, queremos que a se comporte como un decimal para efectos de la operación.
+</p>
+
+<p>Espero que esta explicación haya quedado clara, ya que a partir de la <a href="../clase 5.html">clase 5 del curso de Java</a> haremos ejemplos con estas operaciones y muchas mas. Nos vemos en la próxima clase</p>
+    </article>
+</body>
+</html>
