@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tipos de dato en Java</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../../css/blog.css" />
+  <link rel="stylesheet" href="../../../css/entrada.css" />
+</head>
+<body>
+  <header>
+    <h1>
+        Master Of Codes
+    </h1>
+    <nav>
+        <a href="../../../index.html">Inicio</a>
+        <a href="../../../index.html#features">Cursos</a>            
+    </nav>
+</header>
+  <article>
+    <h1>Tipos de dato en Java</h1>
+    <p>
+      Cuando trabajamos en algún lenguaje de programación, cualquiera que este sea, necesitamos manejar información para que la codificación tenga algún sentido. Para esto, todos los lenguajes de programación desarrollaron una clasificación de los datos acorde a sus características principales. A esta clasificación la conocemos como <b>tipos de dato</b>.
+    </p>
+
+    <p>
+      Java en particular tiene una clasificación básica un tanto simple, la cual se presenta a continuación:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sintaxis</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>byte</code></td>
+          <td>Números enteros en el rango de -128 a -127</td>
+          <td><code>byte a = 10;</code></td>
+        </tr>
+        <tr>
+          <td><code>short</code></td>
+          <td>Números enteros en el rango de -32,728 a 32,767</td>
+          <td><code>short a = 30;</code></td>
+        </tr>
+        <tr>
+          <td><code>int</code></td>
+          <td>Valores enteros dentro del rango de -2,147,483,648 a 2,147,483,647 </td>
+          <td><code>int a = 10;</code></td>
+        </tr>
+        <tr>
+          <td><code>long</code></td>
+          <td>Valores enteros dentro del rango -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807</td>
+          <td><code>long a = 1000000;</code></td>
+        </tr>    
+      </tbody>
+    </table>
+   
+    <p>
+      Te podrás dar cuenta que estos números tienen una peculiaridad: <b>en todos los casos, el negativo es mas grande que el positivo</b>. No te preocupes, aquí explicamos el por qué.
+    </p>
+
+    <p>Tomemos por ejemplo el tipo de dato <b>byte</b>. Un byte esta compuesto de 8 bits, si lo quisiéramos esquematizar se vería algo así:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      De acuerdo al comportamiento de los números en base 2, si en lugar de ser ceros, todos los números fueran 1 el número máximo que podríamos identificar sería el 255, es decir,128 para negativos y 127 para positivos pero, hay algo que no cuadra aún.
+    </p>
+
+    <p>
+      2 elevado a la 8 da 256 no 255, esta diferencia se debe a que tenemos adicionalmente el número 0, el cual no se define en la programación ni como positivo, ni como negativo.
+    </p>
+
+    <h2>¿Como diferencia el  código binario entre positivos y negativos?</h2>
+
+    <p>
+      Para diferenciar entre positivos y negativos en código binario hacemos uso de un <b>bit de signo</b>, es decir, el bit de la izquierda representa un número 0 representa números positivos y un 1 representa un negativo.
+    </p>
+
+    <p>Pongamos por ejemplo el número 1 binario:</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Aplicando el complemento a 1 (cambiar todos los unos por ceros y ceros por unos) resulta lo siguiente:
+    </p>
+     <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p>
+    Ahora apliquemos el complemento a2 (sumar 1 al resultado del complemento a1) y resulta lo siguiente:
+  </p>
+   <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Este número que ves aquí (los 8 números 1) representan el -1 en binario
+    </p>
+
+    <h2>
+      ¿Por que hay 127 positivos y 128 negativos?
+    </h2>
+
+    <p>
+      Como podrás observar, la conversión de un número positivo a negativo implica únicamente hacer el complemento a2 sobre el número positivo. Veamos que sucede en el caso del 127. Primero escribamos esto en binario: 
+    </p>
+<table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Aplicando complemento a1 queda: 
+    </p>
+    <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Si aplicamos complemento a2, queda así:
+    </p>
+    <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="danger">
+        ¿Y que pasa con el 128 positivo?
+      </h2>
+      <p>
+        Al escribirlo quedaría así:
+      </p>
+      <table>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>64</td>
+          <td>32</td>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>En este número tenemos lo siguiente:</p>
+
+    <ul>
+      <li>No puede ser el 128 positivo por que el bit 128 es el de signo, no toma un valor</li>
+      <li>El <code>10000000</code> no tiene representación para negativos en el complemento a2</li>
+    </ul>
+    <p>
+      Por lo que, la única respuesta lógica, es que sea la representación de -128.
+    </p>
+    <h2>
+      ¿Y que pasa con los decimales?
+    </h2>
+
+    <p>
+      De la misma manera que los enteros, los números decimales tienen su representación en Java. Funcionan de manera muy similar, pero lo que importa de los decimales es entender otra cosa.Primero definamos como se comportan:
+    </p>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sintaxis</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>float</code></td>
+          <td>Números decimales en el rango de 1.4e-045 to 3.4e+038</td>
+          <td><code>float a = 10.5f;</code></td>
+        </tr>
+        <tr>
+          <td><code>double</code></td>
+          <td>Números decimales en el rango de 4.9e-324 to 1.8e+308
+</td>
+          <td><code>double a = 30.6;</code></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <p>
+      Aquí hay que precisar algunas cosas. Lo primero que salta a la vista es la <code>f</code> que acompaña a la definición del float. Como podemos observar, el número <code>float</code> tiene un rango menor al de un double, lo cual, implica que todo número <code>float</code> es <code>double</code>, pero no al revés.
+    </p>
+    <p>
+      Esta peculiaridad, hace que Java identifique todo número decimal como double a menos que pongamos la f, es decir, la f le indica a Java que tenemos un número float almacenado en esa variable.
+    </p>
+    <h2>
+      ¿Y todo esto para qué?
+    </h2>
+    <p>Cuando tu programas una app en cualquier lenguaje debes de tener los siguiente muy en claro:</p>
+    <p class="cita">
+      Todo entorno de desarrollo tiene recursos ilimitados.
+    </p>
+    <p>
+      No podemos abusar del uso de la memoria en ningún caso y, por esto, debemos ser precavidos en el como utilizamos la memoria que se nos proporciona.
+    </p>
+
+    <ul>
+      <li>¿Cual sería el motivo por el cual guardaríamos una edad en un <code>int</code>?</li>
+      <li>¿Por que utilizarías un <code>double</code> para almacenar una cantidad bancaria?</li>
+      <li>¿Para que te serviría guardar el inventario de un supermercado en un <code>long</code></li>
+    </ul>
+    <p>
+      La respuesta mas simple es que siempre debemos de utilizar el tipo de dato optimo para la información que vamos a trabajar, de tal manera que aprovechemos al máximo todos los recursos que se nos den, ya que el recurso infinito es posible, pero no hay dinero que alcance para poderlo solventar.
+    </p>
+    <h2>
+      Letras y un dato especial
+    </h2>
+    <p>
+      Para terminar esta clase, hay que analizar ¿que pasa con las letras? ¿Como las almacenamos?
+    </p>
+    <p>
+      Existe un tipo de dato llamado <code>char</code> que permite almacenar una  letra (mas adelante veremos otro tipo de estructuras que permiten almacenar palabras completas) y funciona de la siguiente manera.
+    </p>
+    <div class="pre">
+      <code>char letra = 'a';</code>
+    </div>
+    <p>
+      Si bien es una letra, lo que la computadora ve no es la letra, es el número que representa esta letra. Este número como tal corresponde al equivalente en una codificación llamada ASCII, la cual representa todos los caracteres que pueden existir en un idioma en específico.
+    </p>
+
+    <h2 class="danger">
+      Verdadero y falso
+    </h2>
+
+    <p>
+      Recordemos que dentro de la programación todo se mueve con 2 variables principales:
+      <b> verdadero y falso</b>. Estos dos estados mueven el mundo y es asi como la industria se rige actualmente. 
+    </p>
+    <p>
+      Dentro de Java estos estados se almacenan en un tipo de dato llamado <code>boolean</code>, cuyos únicos estados son <b>true o false</b>.
+    </p>
+
+    <p>
+      Espero que este anexo sea lo suficientemente claro y que te sirva como referente para poder establecer una base por la cual comenzar a programar. Nos vemos en el siguiente manual.
+    </p>
+    </article>
+</body>
+</html>

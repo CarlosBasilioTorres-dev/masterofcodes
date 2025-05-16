@@ -78,3 +78,14 @@ article {
     font-style: italic;
     text-align: center;
   }
+
+  table{
+    width: 100%;
+  }
+
+  td,th{
+    border: 1px solid var(--muted);
+    text-align: center;
+    max-width: 150px;
+    padding: 0 10px;
+  }
